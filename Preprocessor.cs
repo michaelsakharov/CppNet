@@ -100,7 +100,7 @@ public class Preprocessor : IDisposable {
 	private Feature			features;
 	private Warning			warnings;
 	private VirtualFileSystem		filesystem;
-	private PreprocessorListener	listener;
+	private PreprocessorListenerBase	listener;
 
     private List<string> _importedPaths = new List<string>();
 
@@ -159,7 +159,7 @@ public class Preprocessor : IDisposable {
 	 * The listener is notified of warnings, errors and source
 	 * changes, amongst other things.
 	 */
-	public void setListener(PreprocessorListener listener) {
+	public void setListener(PreprocessorListenerBase listener) {
 		this.listener = listener;
 		Source	s = source;
 		while (s != null) {
@@ -173,7 +173,7 @@ public class Preprocessor : IDisposable {
 	 * Returns the PreprocessorListener which handles events for
 	 * this Preprocessor.
 	 */
-	public PreprocessorListener getListener() {
+	public PreprocessorListenerBase getListener() {
 		return listener;
 	}
 

@@ -38,7 +38,7 @@ namespace CppNet
     {
         private Source parent;
         private boolean autopop;
-        private PreprocessorListener listener;
+        private PreprocessorListenerBase listener;
         private boolean active;
         private boolean werror;
 
@@ -121,7 +121,7 @@ namespace CppNet
          * used, but if you are using a Source as a standalone object,
          * you may wish to call this.
          */
-        public void setListener(PreprocessorListener pl)
+        public void setListener(PreprocessorListenerBase pl)
         {
             this.listener = pl;
         }

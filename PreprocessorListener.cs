@@ -16,7 +16,8 @@
  */
 using System;
 
-namespace CppNet {
+namespace CppNet
+{
 
 /**
  * A handler for preprocessor events, primarily errors and warnings.
@@ -25,62 +26,27 @@ namespace CppNet {
  * error and warning events will throw an exception. Installing a
  * listener allows more intelligent handling of these events.
  */
-public class PreprocessorListener {
+    public class PreprocessorListener : PreprocessorListenerBase
+    {
+        public PreprocessorListener() : base()
+        {
+        }
 
-	private int	errors;
-	private int	warnings;
+        protected void print(String msg)
+        {
+            System.Console.Error.WriteLine(msg);
+        }
 
-	public PreprocessorListener() {
-		clear();
-	}
+        public override void handleWarning(Source source, int line, int column, string msg)
+        {
+            base.handleWarning(source, line, column, msg);
+            print(source.getName() + ":" + line + ":" + column + ": warning: " + msg);
+        }
 
-	public void clear() {
-		errors = 0;
-		warnings = 0;
-	}
-
-	public int getErrors() {
-		return errors;
-	}
-
-	public int getWarnings() {
-		return warnings;
-	}
-
-	protected void print(String msg) {
-        System.Console.Error.WriteLine(msg);
-	}
-
-	/**
-	 * Handles a warning.
-	 *
-	 * The behaviour of this method is defined by the
-	 * implementation. It may simply record the error message, or
-	 * it may throw an exception.
-	 */
-	public void handleWarning(Source source, int line, int column,
-					String msg) {
-		warnings++;
-		print(source.getName() + ":" + line + ":" + column +
-				": warning: " + msg); 
-	}
-
-	/**
-	 * Handles an error.
-	 *
-	 * The behaviour of this method is defined by the
-	 * implementation. It may simply record the error message, or
-	 * it may throw an exception.
-	 */
-	public void handleError(Source source, int line, int column,
-					String msg) {
-		errors++;
-		print(source.getName() + ":" + line + ":" + column +
-				": error: " + msg); 
-	}
-
-	public void handleSourceChange(Source source, String ev) {
-	}
-
-}
+        public override void handleError(Source source, int line, int column, string msg)
+        {
+            base.handleError(source, line, column, msg);
+            print(source.getName() + ":" + line + ":" + column + ": error: " + msg);
+        }
+    }
 }

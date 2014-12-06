@@ -23,7 +23,7 @@ namespace CppNet
     internal class JoinReader /* extends Reader */ {
         private TextReader _in;
 
-        private PreprocessorListener listener;
+        private PreprocessorListenerBase listener;
         private LexerSource source;
         private bool trigraphs;
         private bool warnings;
