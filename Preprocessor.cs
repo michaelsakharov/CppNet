@@ -508,11 +508,7 @@ public class Preprocessor : IDisposable {
 	 * their own Token.NL. */
 	private Token line_token(int line, String name, String extra) {
 		StringBuilder	buf = new StringBuilder();
-		buf.Append("#line ").Append(line)
-			.Append(" \"");
-		/* XXX This call to escape(name) is correct but ugly. */
-		MacroTokenSource.escape(buf, name);
-		buf.Append("\"").Append(extra).Append("\n");
+		buf.Append("#line ").Append(line).Append("\n");
         return new Token(Token.P_LINE, line, 0, buf.ToString(), null);
 	}
 

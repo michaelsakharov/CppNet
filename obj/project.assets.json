@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\acer1\\Documents\\GitHub\\CppNet\\CPreProcessorNet\\CPreProcessorNet.csproj",
+      "projectUniqueName": "C:\\Users\\acer1\\Documents\\GitHub\\CppNet\\CPreProcessorNet.csproj",
       "projectName": "CPreProcessorNet",
-      "projectPath": "C:\\Users\\acer1\\Documents\\GitHub\\CppNet\\CPreProcessorNet\\CPreProcessorNet.csproj",
+      "projectPath": "C:\\Users\\acer1\\Documents\\GitHub\\CppNet\\CPreProcessorNet.csproj",
       "packagesPath": "C:\\Users\\acer1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\acer1\\Documents\\GitHub\\CppNet\\CPreProcessorNet\\obj\\",
+      "outputPath": "C:\\Users\\acer1\\Documents\\GitHub\\CppNet\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\acer1\\AppData\\Roaming\\NuGet\\NuGet.Config",
